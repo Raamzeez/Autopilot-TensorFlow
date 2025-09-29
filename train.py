@@ -40,7 +40,7 @@ logs_path = './logs'
 summary_writer = tf.summary.FileWriter(logs_path, graph=tf.get_default_graph())
 
 epochs = 30
-batch_size = 100
+batch_size = 64
 
 # train over the dataset about 30 times
 for epoch in range(epochs):

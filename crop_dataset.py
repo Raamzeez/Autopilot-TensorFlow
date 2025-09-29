@@ -20,7 +20,7 @@ print(f"First 10 files: {[os.path.basename(f) for f in jpg_files[:10]]}")
 print(f"Last 10 files: {[os.path.basename(f) for f in jpg_files[-10:]]}")
 
 # Set max limit for processing (set to None for no limit)
-MAX_IMAGES = 100  # Change this number or set to None for all images
+MAX_IMAGES = None  # Change this number or set to None for all images
 if MAX_IMAGES:
     jpg_files = jpg_files[:MAX_IMAGES]
     print(f"Processing first {len(jpg_files)} images (limited by MAX_IMAGES)")

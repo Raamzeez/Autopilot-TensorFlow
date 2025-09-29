@@ -19,8 +19,8 @@ rows,cols = img.shape
 
 smoothed_angle = 0
 
-path = "driving_dataset/data/"
-img_name = "4566.jpg"
+path = "driving_dataset_2/"
+img_name = "790.jpg"
 
 # Load and process the 0th image
 full_image = cv2.imread(path + img_name)

@@ -19,9 +19,10 @@ rows,cols = img.shape
 
 smoothed_angle = 0
 
-path = "driving_dataset/data/"
+path = "driving_dataset_2/"
 
-i = 0
+# i = 0
+i=16
 while(cv2.waitKey(10) != ord('q')):
     full_image = cv2.imread(path + str(i) + ".jpg")
     image = cv2.resize(full_image[-150:], (200, 66)) / 255.0

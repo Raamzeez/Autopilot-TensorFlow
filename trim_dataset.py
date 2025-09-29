@@ -3,8 +3,8 @@ import glob
 
 # Configuration
 source_dir = "driving_dataset_2_cropped"
-starting_number = 100  # Keep files from this number onwards
-ending_number = 1000   # Keep files up to this number
+starting_number = 16  # Keep files from this number onwards
+ending_number = 8075   # Keep files up to this number
 
 print(f"Trimming dataset: keeping files {starting_number}.jpg to {ending_number}.jpg")
 print(f"Source directory: {source_dir}")
