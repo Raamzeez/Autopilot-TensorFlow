@@ -9,14 +9,18 @@ ys = []
 train_batch_pointer = 0
 val_batch_pointer = 0
 
+path = "driving_dataset/data/"
+
 #read data.txt
-with open("driving_dataset/data.txt") as f:
+with open(path + "data.txt") as f:
     for line in f:
-        xs.append("driving_dataset/" + line.split()[0])
+        xs.append(path + line.split()[0])
         #the paper by Nvidia uses the inverse of the turning radius,
         #but steering wheel angle is proportional to the inverse of turning radius
         #so the steering wheel angle in radians is used as the output
-        ys.append(float(line.split()[1]) * 3.14159265 / 180)
+        # Extract the steering angle (first part before the comma)
+        steering_angle = line.split()[1].split(',')[0]
+        ys.append(float(steering_angle) * 3.14159265 / 180)
 
 #get number of images
 num_images = len(xs)

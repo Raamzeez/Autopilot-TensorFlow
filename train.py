@@ -15,14 +15,25 @@ train_vars = tf.trainable_variables()
 
 loss = tf.reduce_mean(tf.square(tf.subtract(model.y_, model.y))) + tf.add_n([tf.nn.l2_loss(v) for v in train_vars]) * L2NormConst
 train_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+
+# Initialize variables
 sess.run(tf.global_variables_initializer())
+
+# Try to restore from checkpoint if it exists
+checkpoint_path = os.path.join(LOGDIR, "model.ckpt")
+if os.path.exists(checkpoint_path + ".index"):
+    print("Loading existing model from checkpoint...")
+    saver = tf.train.Saver(write_version = saver_pb2.SaverDef.V2)
+    saver.restore(sess, checkpoint_path)
+    print("Model restored successfully!")
+else:
+    print("No existing checkpoint found, starting with fresh model.")
+    saver = tf.train.Saver(write_version = saver_pb2.SaverDef.V2)
 
 # create a summary to monitor cost tensor
 tf.summary.scalar("loss", loss)
 # merge all summaries into a single op
 merged_summary_op = tf.summary.merge_all()
-
-saver = tf.train.Saver(write_version = saver_pb2.SaverDef.V2)
 
 # op to write logs to Tensorboard
 logs_path = './logs'
