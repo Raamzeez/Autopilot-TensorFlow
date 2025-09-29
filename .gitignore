@@ -1,6 +1,7 @@
 .venv/
 driving_dataset/
 driving_dataset_2/
+driving_dataset_2_cropped/
 logs/
 
 # Python

@@ -33,7 +33,7 @@ for i, monitor in enumerate(sct.monitors):
     print(f"Monitor {i}: {monitor}")
 
 # Try to capture the primary monitor (usually index 1)
-monitorIndex = 1
+monitorIndex = 0
 monitor = sct.monitors[monitorIndex]  # capture primary monitor
 print(f"Using monitor {monitorIndex}: {monitor}")
 
