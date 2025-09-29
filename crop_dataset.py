@@ -39,9 +39,10 @@ for i, image_path in enumerate(jpg_files):
     # Crop using the same logic as run_dataset.py:
     # Remove bottom 1350 pixels (like in training: full_image[-1350:])
     # Remove right 1500 pixels (additional cropping for UI elements)
-    existing_bottom_removed = 150
-    # window_cropped_img = img[:-1080, :-1920]
-    cropped_img = img[:-1080, :-1920]
+    existing_bottom_removed = -150 # The number of pixels that train.py is removing from the bottom
+    window_cropped_img = img[:-1080, :-1920] # This is the crop we do to capture the window of the game
+    cropped_img = window_cropped_img[:-existing_bottom_removed + existing_bottom_removed + -150, :]
+    # ^ We remove an additional -150 pixels to get rid of the dashboard
     
     # Get the filename
     filename = os.path.basename(image_path)

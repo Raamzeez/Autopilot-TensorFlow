@@ -20,9 +20,10 @@ rows,cols = img.shape
 smoothed_angle = 0
 
 path = "driving_dataset/data/"
+img_name = "4566.jpg"
 
 # Load and process the 0th image
-full_image = cv2.imread(path + "4566.jpg")
+full_image = cv2.imread(path + img_name)
 image = cv2.resize(full_image[-150:], (200, 66)) / 255.0
 degrees = model.y.eval(feed_dict={model.x: [image], model.keep_prob: 1.0})[0][0] * 180.0 / 3.14159265
 
