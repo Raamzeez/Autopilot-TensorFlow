@@ -1,5 +1,6 @@
 .venv/
 driving_dataset/
+driving_dataset_2/
 logs/
 
 # Python
