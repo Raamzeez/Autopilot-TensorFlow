@@ -39,7 +39,7 @@ merged_summary_op = tf.summary.merge_all()
 logs_path = './logs'
 summary_writer = tf.summary.FileWriter(logs_path, graph=tf.get_default_graph())
 
-epochs = 50
+epochs = 100
 batch_size = 64
 
 # train over the dataset about 30 times

@@ -19,7 +19,7 @@ rows,cols = img.shape
 
 # No smoothing needed - use direct angles
 
-path = "driving_dataset_4/"
+path = "joined_dataset_2/"
 
 # Load the actual steering angles from data.txt
 actual_angles = {}
@@ -63,7 +63,7 @@ while(cv2.waitKey(10) != ord('q')):
     cv2.imshow("frame", full_image)
     
     # Show predicted steering wheel (no smoothing)
-    smoothed_angle += 0.7 * pow(abs((degrees - smoothed_angle)), 2.0 / 3.0) * (degrees - smoothed_angle) / abs(degrees - smoothed_angle)
+    smoothed_angle += 0.4 * pow(abs((degrees - smoothed_angle)), 2.0 / 3.0) * (degrees - smoothed_angle) / abs(degrees - smoothed_angle)
     M = cv2.getRotationMatrix2D((cols/2,rows/2),-smoothed_angle,1)
     dst = cv2.warpAffine(img,M,(cols,rows))
     cv2.imshow("steering wheel (predicted)", dst)
