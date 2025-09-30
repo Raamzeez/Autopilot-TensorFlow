@@ -9,7 +9,7 @@ import os
 # ===============================
 # CONFIG
 # ===============================
-SAVE_DIR = "driving_dataset_3"
+SAVE_DIR = "driving_dataset_4"
 FPS = 10  # frames per second to capture (10 = every 100ms)
 MAX_ROTATION = 450  # Logitech G920 is ±450 degrees
 # ===============================

@@ -3,8 +3,8 @@ import os
 import glob
 
 # Source and destination directories
-source_dir = "driving_dataset_2"
-dest_dir = "driving_dataset_2_cropped"
+source_dir = "driving_dataset_3"
+dest_dir = "driving_dataset_3_cropped"
 
 # Create destination directory if it doesn't exist
 if not os.path.exists(dest_dir):

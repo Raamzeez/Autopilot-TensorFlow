@@ -3,6 +3,9 @@ driving_dataset/
 driving_dataset_2/
 driving_dataset_2_cropped/
 driving_dataset_2_og/
+driving_dataset_3_og/
+driving_dataset_3/
+driving_dataset_4/
 logs/
 
 # Python
