@@ -1,6 +1,7 @@
 import cv2
 import os
 import glob
+import shutil
 
 def crop_dataset(source_dir, dest_dir, max_images=None):
     """
@@ -58,6 +59,8 @@ def crop_dataset(source_dir, dest_dir, max_images=None):
         # Print progress
         if (i + 1) % 100 == 0:
             print(f"Processed {i + 1}/{len(jpg_files)} images...")
+
+    shutil.copy2(os.path.join(source_dir, 'data.txt'), dest_dir)
 
     print(f"Done! Cropped images saved to {dest_dir}")
     print(f"Original size: {width}x{height}")

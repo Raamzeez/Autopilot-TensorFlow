@@ -48,9 +48,9 @@ def merge_datasets(first_dataset_path, second_dataset_path, output_path):
 
 def main():
     # Define your paths here
-    first_dataset_path = "joined_dataset"
-    second_dataset_path = "driving_dataset_4"
-    output_path = "joined_dataset_2"
+    first_dataset_path = "driving_dataset"
+    second_dataset_path = "driving_dataset_2"
+    output_path = "joined_dataset"
     
     merge_datasets(first_dataset_path, second_dataset_path, output_path)
     print("Dataset merge completed successfully!")

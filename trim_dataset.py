@@ -62,6 +62,26 @@ def trim_dataset(source_dir, starting_number, ending_number, confirm=True):
             except Exception as e:
                 print(f"Error removing {filename}: {e}")
 
+    # Process data.txt to remove corresponding lines
+    data_file_path = os.path.join(source_dir, 'data.txt')
+    
+    # Read all lines first
+    with open(data_file_path, 'r') as data_file:
+        lines = data_file.readlines()
+    
+    # Filter lines to keep
+    lines_to_keep = []
+    for line in lines:
+        if line.strip():  # Skip empty lines
+            filename = line.split()[0]
+            file_number = int(filename.split('.')[0])
+            if starting_number <= file_number <= ending_number:
+                lines_to_keep.append(line)
+    
+    # Write back the filtered lines
+    with open(data_file_path, 'w') as data_file:
+        data_file.writelines(lines_to_keep)
+
     print(f"Trimming complete! Removed {removed_count} files.")
     print(f"Kept files from {starting_number}.jpg to {ending_number}.jpg")
     
@@ -69,7 +89,7 @@ def trim_dataset(source_dir, starting_number, ending_number, confirm=True):
 
 if __name__ == "__main__":
     # Example usage with default values
-    source_dir = "driving_dataset_4_cropped"
-    starting_number = 19
-    ending_number = 10620
+    source_dir = "driving_dataset_2"
+    starting_number = 2
+    ending_number = 6
     trim_dataset(source_dir, starting_number, ending_number)

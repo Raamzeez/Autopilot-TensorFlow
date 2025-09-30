@@ -1,3 +1,8 @@
+import os
+from crop_dataset import crop_dataset
+from trim_dataset import trim_dataset
+from concatenate_dataset import merge_datasets
+
 print("╔════════════════════════════════════════════════════════════════╗")
 print("║                     Processing Dataset                         ║")
 print("║--------------------------------------------------------------- ║")
@@ -10,8 +15,8 @@ print("╚═══════════════════════�
 og_dataset_path = input("Enter the path to the original dataset: ")
 existing_dataset_path = input("Enter the path to the existing large dataset to merge with: ")
 new_dataset_path = input("Enter the path to the new large dataset after processing: ")
-starting_number = input("Enter the starting image number for dataset: ")
-ending_number = input("Enter the ending image number for dataset: ")
+starting_number = int(input("Enter the starting image number for dataset: "))  # Convert to int
+ending_number = int(input("Enter the ending image number for dataset: "))      # Convert to int
 
 print(f"╔════════════════════════════════════════════════════════════════╗")
 print(f"║                     Processing Dataset                         ║")
