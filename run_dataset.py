@@ -19,7 +19,7 @@ rows,cols = img.shape
 
 smoothed_angle = 0
 
-path = "driving_dataset_2/"
+path = "joined_dataset_2/"
 
 # i = 0
 i=16

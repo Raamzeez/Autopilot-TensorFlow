@@ -9,7 +9,7 @@ ys = []
 train_batch_pointer = 0
 val_batch_pointer = 0
 
-path = "driving_dataset_2/"
+path = "joined_dataset_2/"
 
 #read data.txt
 with open(path + "data.txt") as f:
