@@ -19,7 +19,7 @@ rows,cols = img.shape
 
 # No smoothing needed - use direct angles
 
-path = "joined_dataset_2/"
+path = "driving_dataset_6/"
 
 # Load the actual steering angles from data.txt
 actual_angles = {}
@@ -37,7 +37,7 @@ print("Press 'q' to quit")\
 
 smoothed_angle = 0
 
-i = 39
+i = 45
 while(cv2.waitKey(10) != ord('q')):
     # Load image
     full_image = cv2.imread(path + str(i) + ".jpg")
