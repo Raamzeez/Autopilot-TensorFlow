@@ -14,7 +14,7 @@ L2NormConst = 0.001
 train_vars = tf.trainable_variables()
 
 loss = tf.reduce_mean(tf.square(tf.subtract(model.y_, model.y))) + tf.add_n([tf.nn.l2_loss(v) for v in train_vars]) * L2NormConst
-train_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+train_step = tf.train.AdamOptimizer(5e-5).minimize(loss)
 
 # Initialize variables
 sess.run(tf.global_variables_initializer())
@@ -39,7 +39,7 @@ merged_summary_op = tf.summary.merge_all()
 logs_path = './logs'
 summary_writer = tf.summary.FileWriter(logs_path, graph=tf.get_default_graph())
 
-epochs = 50
+epochs = 10
 batch_size = 64
 
 # train over the dataset about 30 times
